@@ -32,7 +32,7 @@ jobs:
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
       run: |
-        python simple_menu_minimal.py
+        python full_menu_agent.py
         
     - name: Upload results
       uses: actions/upload-artifact@v4
