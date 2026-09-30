@@ -13,10 +13,10 @@ from email.mime.multipart import MIMEMultipart
 def load_menu_data():
     """Load menu data from JSON file"""
     try:
-        with open('menu_data.json', 'r') as f:
+        with open('menu_data_final_correct.json', 'r') as f:
             return json.load(f)
     except Exception as e:
-        print(f"❌ Error loading menu_data.json: {e}")
+        print(f"❌ Error loading menu_data_final_correct.json: {e}")
         return []
 
 def get_tomorrows_menu(menu_data):
