@@ -23,16 +23,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install pdfplumber
         
-    - name: Run menu agent
+    - name: Extract menu data (first run)
+      run: |
+        python menu_extractor.py
+        
+    - name: Send daily email
       env:
-        PDF_PATH: ./menu.pdf
         EMAIL_TO: ${{ secrets.EMAIL_TO }}
         SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
         SMTP_PORT: ${{ secrets.SMTP_PORT }}
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
       run: |
-        python full_menu_agent.py
+        python menu_emailer.py
         
     - name: Upload results
       uses: actions/upload-artifact@v4
