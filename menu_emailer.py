@@ -15,7 +15,8 @@ def load_menu_data():
     try:
         with open('menu_data.json', 'r') as f:
             return json.load(f)
-    except:
+    except Exception as e:
+        print(f"❌ Error loading menu_data.json: {e}")
         return []
 
 def get_tomorrows_menu(menu_data):
@@ -116,7 +117,7 @@ def main():
     menu_data = load_menu_data()
     
     if not menu_data:
-        print("❌ No menu data found. Run menu_extractor.py first")
+        print("❌ No menu data found in menu_data.json")
         return
     
     print(f"📋 Loaded {len(menu_data)} menu items from JSON")

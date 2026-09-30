@@ -1,0 +1,452 @@
+[
+  {
+    "date": "2026-10-19",
+    "day": "Monday",
+    "week_start": "19 October",
+    "meal": "Mixed bean bolognaise with penne pasta"
+  },
+  {
+    "date": "2026-10-20",
+    "day": "Tuesday",
+    "week_start": "19 October",
+    "meal": "Margherita pizza & oven baked wedges"
+  },
+  {
+    "date": "2026-10-21",
+    "day": "Wednesday",
+    "week_start": "19 October",
+    "meal": "Vegetable \u2018squashage' roll with roast potatoes & gravy"
+  },
+  {
+    "date": "2026-10-22",
+    "day": "Thursday",
+    "week_start": "19 October",
+    "meal": "Cauliflower & chickpea curry with carrot rice"
+  },
+  {
+    "date": "2026-10-23",
+    "day": "Friday",
+    "week_start": "19 October",
+    "meal": "Vegan sausage roll, chips & tomato ketchup"
+  },
+  {
+    "date": "2026-10-19",
+    "day": "Monday",
+    "week_start": "19 October",
+    "meal": "Halal beef & lentil bolognaise with penne pasta"
+  },
+  {
+    "date": "2026-10-20",
+    "day": "Tuesday",
+    "week_start": "19 October",
+    "meal": "Halal pepperoni pizza & oven baked wedges"
+  },
+  {
+    "date": "2026-10-21",
+    "day": "Wednesday",
+    "week_start": "19 October",
+    "meal": "Halal roast chicken breast with roast potatoes & gravy"
+  },
+  {
+    "date": "2026-10-22",
+    "day": "Thursday",
+    "week_start": "19 October",
+    "meal": "Halal mild chicken tikka masala & chickpea curry with carrot rice"
+  },
+  {
+    "date": "2026-10-23",
+    "day": "Friday",
+    "week_start": "19 October",
+    "meal": "Halal fish fingers, chips & tomato ketchup"
+  },
+  {
+    "date": "2026-10-19",
+    "day": "Monday",
+    "week_start": "19 October",
+    "meal": "Carrots & peas"
+  },
+  {
+    "date": "2026-10-20",
+    "day": "Tuesday",
+    "week_start": "19 October",
+    "meal": "Broccoli"
+  },
+  {
+    "date": "2026-10-21",
+    "day": "Wednesday",
+    "week_start": "19 October",
+    "meal": "Carrot & cabbage"
+  },
+  {
+    "date": "2026-10-22",
+    "day": "Thursday",
+    "week_start": "19 October",
+    "meal": "Tomato & cucumber salad"
+  },
+  {
+    "date": "2026-10-23",
+    "day": "Friday",
+    "week_start": "19 October",
+    "meal": "Baked beans"
+  },
+  {
+    "date": "2026-10-19",
+    "day": "Monday",
+    "week_start": "19 October",
+    "meal": "Penne pasta with house tomato sauce"
+  },
+  {
+    "date": "2026-10-20",
+    "day": "Tuesday",
+    "week_start": "19 October",
+    "meal": "Penne pasta with a creamy cheese sauce"
+  },
+  {
+    "date": "2026-10-21",
+    "day": "Wednesday",
+    "week_start": "19 October",
+    "meal": "Creamy pesto penne pasta"
+  },
+  {
+    "date": "2026-10-22",
+    "day": "Thursday",
+    "week_start": "19 October",
+    "meal": "Penne pasta with a creamy cheese sauce"
+  },
+  {
+    "date": "2026-10-23",
+    "day": "Friday",
+    "week_start": "19 October",
+    "meal": "Penne pasta with house tomato sauce"
+  },
+  {
+    "date": "2026-10-19",
+    "day": "Monday",
+    "week_start": "19 October",
+    "meal": "Lemon shortbread biscuit"
+  },
+  {
+    "date": "2026-10-20",
+    "day": "Tuesday",
+    "week_start": "19 October",
+    "meal": "Chocolate & banana brownie sponge"
+  },
+  {
+    "date": "2026-10-21",
+    "day": "Wednesday",
+    "week_start": "19 October",
+    "meal": "Orange jelly & mandarins"
+  },
+  {
+    "date": "2026-10-22",
+    "day": "Thursday",
+    "week_start": "19 October",
+    "meal": "Oaty apple crumble & custard"
+  },
+  {
+    "date": "2026-10-23",
+    "day": "Friday",
+    "week_start": "19 October",
+    "meal": "Strawberry yogurt & strawberry sauce"
+  },
+  {
+    "date": "2026-09-14",
+    "day": "Monday",
+    "week_start": "14 September",
+    "meal": "Vegetable sausages & mashed potatoes with gravy"
+  },
+  {
+    "date": "2026-09-15",
+    "day": "Tuesday",
+    "week_start": "14 September",
+    "meal": "Lentil & cauliflower dahl with steamed rice"
+  },
+  {
+    "date": "2026-09-16",
+    "day": "Wednesday",
+    "week_start": "14 September",
+    "meal": "Roast Quorn fillet with roast potatoes & gravy"
+  },
+  {
+    "date": "2026-09-17",
+    "day": "Thursday",
+    "week_start": "14 September",
+    "meal": "Baked creamy mac 'n' cheese"
+  },
+  {
+    "date": "2026-09-18",
+    "day": "Friday",
+    "week_start": "14 September",
+    "meal": "Vegetable nuggets, chips & tomato ketchup"
+  },
+  {
+    "date": "2026-09-14",
+    "day": "Monday",
+    "week_start": "14 September",
+    "meal": "Halal chicken sausages (beef casing) with mashed potatoes & gravy"
+  },
+  {
+    "date": "2026-09-15",
+    "day": "Tuesday",
+    "week_start": "14 September",
+    "meal": "Halal Cajun chicken, tomato & sweetcorn pasta bake"
+  },
+  {
+    "date": "2026-09-16",
+    "day": "Wednesday",
+    "week_start": "14 September",
+    "meal": "Halal roast turkey breast, roast potatoes & gravy"
+  },
+  {
+    "date": "2026-09-17",
+    "day": "Thursday",
+    "week_start": "14 September",
+    "meal": "Halal sweet & sour chicken with carrot rice"
+  },
+  {
+    "date": "2026-09-18",
+    "day": "Friday",
+    "week_start": "14 September",
+    "meal": "Halal fish & chips with tomato ketchup"
+  },
+  {
+    "date": "2026-09-14",
+    "day": "Monday",
+    "week_start": "14 September",
+    "meal": "Carrots & peas"
+  },
+  {
+    "date": "2026-09-15",
+    "day": "Tuesday",
+    "week_start": "14 September",
+    "meal": "Broccoli"
+  },
+  {
+    "date": "2026-09-16",
+    "day": "Wednesday",
+    "week_start": "14 September",
+    "meal": "Broccoli, cauliflower & peas"
+  },
+  {
+    "date": "2026-09-17",
+    "day": "Thursday",
+    "week_start": "14 September",
+    "meal": "Selection from the salad bar"
+  },
+  {
+    "date": "2026-09-18",
+    "day": "Friday",
+    "week_start": "14 September",
+    "meal": "Peas"
+  },
+  {
+    "date": "2026-09-14",
+    "day": "Monday",
+    "week_start": "14 September",
+    "meal": "Penne pasta with a creamy cheese sauce"
+  },
+  {
+    "date": "2026-09-15",
+    "day": "Tuesday",
+    "week_start": "14 September",
+    "meal": "Penne pasta with house tomato sauce"
+  },
+  {
+    "date": "2026-09-16",
+    "day": "Wednesday",
+    "week_start": "14 September",
+    "meal": "Penne pasta with a creamy cheese sauce"
+  },
+  {
+    "date": "2026-09-17",
+    "day": "Thursday",
+    "week_start": "14 September",
+    "meal": "Creamy pesto penne pasta"
+  },
+  {
+    "date": "2026-09-18",
+    "day": "Friday",
+    "week_start": "14 September",
+    "meal": "Penne pasta with house tomato sauce"
+  },
+  {
+    "date": "2026-09-14",
+    "day": "Monday",
+    "week_start": "14 September",
+    "meal": "Chocolate sponge & chocolate sauce"
+  },
+  {
+    "date": "2026-09-15",
+    "day": "Tuesday",
+    "week_start": "14 September",
+    "meal": "Raspberry jelly & mandarins"
+  },
+  {
+    "date": "2026-09-16",
+    "day": "Wednesday",
+    "week_start": "14 September",
+    "meal": "Jam sponge & custard"
+  },
+  {
+    "date": "2026-09-17",
+    "day": "Thursday",
+    "week_start": "14 September",
+    "meal": "Carrot cake with orange glaze"
+  },
+  {
+    "date": "2026-09-18",
+    "day": "Friday",
+    "week_start": "14 September",
+    "meal": "Chocolate mousse"
+  },
+  {
+    "date": "2026-10-12",
+    "day": "Monday",
+    "week_start": "12 October",
+    "meal": "Cheesy cauliflower pasta bake"
+  },
+  {
+    "date": "2026-10-13",
+    "day": "Tuesday",
+    "week_start": "12 October",
+    "meal": "Margherita pizza & oven baked wedges"
+  },
+  {
+    "date": "2026-10-14",
+    "day": "Wednesday",
+    "week_start": "12 October",
+    "meal": "Vegetable sausages with roast potatoes & gravy"
+  },
+  {
+    "date": "2026-10-15",
+    "day": "Thursday",
+    "week_start": "12 October",
+    "meal": "Mixed bean & vegetable wrap with vegetable rice"
+  },
+  {
+    "date": "2026-10-16",
+    "day": "Friday",
+    "week_start": "12 October",
+    "meal": "Chickpea & vegetable fritter, chips & tomato ketchup"
+  },
+  {
+    "date": "2026-10-12",
+    "day": "Monday",
+    "week_start": "12 October",
+    "meal": "Halal beef nacho pasta bake"
+  },
+  {
+    "date": "2026-10-13",
+    "day": "Tuesday",
+    "week_start": "12 October",
+    "meal": "Halal tomato, spinach & salmon pasta"
+  },
+  {
+    "date": "2026-10-14",
+    "day": "Wednesday",
+    "week_start": "12 October",
+    "meal": "Halal roast chicken breast, roast potatoes & gravy"
+  },
+  {
+    "date": "2026-10-15",
+    "day": "Thursday",
+    "week_start": "12 October",
+    "meal": "Halal zesty tomato, lentil & herb chicken with vegetable rice"
+  },
+  {
+    "date": "2026-10-16",
+    "day": "Friday",
+    "week_start": "12 October",
+    "meal": "Halal fish fingers, chips & tomato ketchup"
+  },
+  {
+    "date": "2026-10-12",
+    "day": "Monday",
+    "week_start": "12 October",
+    "meal": "Sweetcorn"
+  },
+  {
+    "date": "2026-10-13",
+    "day": "Tuesday",
+    "week_start": "12 October",
+    "meal": "Peas & carrots"
+  },
+  {
+    "date": "2026-10-14",
+    "day": "Wednesday",
+    "week_start": "12 October",
+    "meal": "Cabbage, peas & carrot"
+  },
+  {
+    "date": "2026-10-15",
+    "day": "Thursday",
+    "week_start": "12 October",
+    "meal": "Carrot, cucumber & tomato salad"
+  },
+  {
+    "date": "2026-10-16",
+    "day": "Friday",
+    "week_start": "12 October",
+    "meal": "Baked beans"
+  },
+  {
+    "date": "2026-10-12",
+    "day": "Monday",
+    "week_start": "12 October",
+    "meal": "Penne pasta with house tomato sauce"
+  },
+  {
+    "date": "2026-10-13",
+    "day": "Tuesday",
+    "week_start": "12 October",
+    "meal": "Penne pasta with a creamy cheese sauce"
+  },
+  {
+    "date": "2026-10-14",
+    "day": "Wednesday",
+    "week_start": "12 October",
+    "meal": "Penne pasta with a creamy cheese sauce"
+  },
+  {
+    "date": "2026-10-15",
+    "day": "Thursday",
+    "week_start": "12 October",
+    "meal": "Creamy pesto penne pasta"
+  },
+  {
+    "date": "2026-10-16",
+    "day": "Friday",
+    "week_start": "12 October",
+    "meal": "Penne pasta with house tomato sauce"
+  },
+  {
+    "date": "2026-10-12",
+    "day": "Monday",
+    "week_start": "12 October",
+    "meal": "Chocolate shortbread"
+  },
+  {
+    "date": "2026-10-13",
+    "day": "Tuesday",
+    "week_start": "12 October",
+    "meal": "Apple & summer berry crumble with custard"
+  },
+  {
+    "date": "2026-10-14",
+    "day": "Wednesday",
+    "week_start": "12 October",
+    "meal": "Orange jelly & mandarins"
+  },
+  {
+    "date": "2026-10-15",
+    "day": "Thursday",
+    "week_start": "12 October",
+    "meal": "Watermelon wedge"
+  },
+  {
+    "date": "2026-10-16",
+    "day": "Friday",
+    "week_start": "12 October",
+    "meal": "Strawberry yoghurt & strawberry sauce"
+  }
+]

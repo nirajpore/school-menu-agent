@@ -1,12 +1,12 @@
-name: "School Menu Agent"
+name: School Menu Emailer
 
 on:
-  schedule:
-    - cron: "0 18 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: '0 16 * * 1-5'  # 4 PM daily (Monday-Friday)
 
 jobs:
-  menu-notification:
+  send-menu-email:
     runs-on: ubuntu-latest
     
     steps:
@@ -14,20 +14,16 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: '3.11'
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pdfplumber
+        pip install smtplib
         
-    - name: Extract menu data (first run)
-      run: |
-        python menu_extractor.py
-        
-    - name: Send daily email
+    - name: Send daily email from JSON
       env:
         EMAIL_TO: ${{ secrets.EMAIL_TO }}
         SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
@@ -40,5 +36,5 @@ jobs:
     - name: Upload results
       uses: actions/upload-artifact@v4
       with:
-        name: menu-results
+        name: menu-email-results
         path: menu_data.json
