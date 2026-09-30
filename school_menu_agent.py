@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-School Menu Agent - Reads PDF menu and sends daily email notifications
+School Menu Agent for GitHub Actions - Cloud-based version
 """
 
 import re
+import os
+import smtplib
 from datetime import datetime, timedelta
-import calendar
-import subprocess
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import pdfplumber
 from typing import Dict, Optional
 
 class SchoolMenuAgent:
@@ -16,7 +19,6 @@ class SchoolMenuAgent:
         
     def _load_uk_holidays(self) -> Dict[str, str]:
         """Load UK public holidays for 2026"""
-        # UK public holidays for 2026
         return {
             "2026-01-01": "New Year's Day",
             "2026-04-03": "Good Friday",
@@ -28,13 +30,14 @@ class SchoolMenuAgent:
             "2026-12-28": "Boxing Day (substitute)"
         }
     
-    def extract_menu_from_pdf(self) -> str:
-        """Extract text content from PDF using direct file reading"""
+    def extract_text_from_pdf(self) -> str:
+        """Extract text from PDF using pdfplumber"""
         try:
-            # Use read_file function directly since we're in Hermes context
-            from hermes_tools import read_file
-            result = read_file(self.pdf_path)
-            return result.get("content", "")
+            text = ""
+            with pdfplumber.open(self.pdf_path) as pdf:
+                for page in pdf.pages:
+                    text += page.extract_text() + "\n"
+            return text
         except Exception as e:
             print(f"Error reading PDF: {e}")
             return ""
@@ -46,16 +49,13 @@ class SchoolMenuAgent:
         current_week = None
         
         for line in lines:
-            # Remove line numbers and pipe separators
-            clean_line = re.sub(r'^\d+\|', '', line).strip()
+            clean_line = line.strip()
             
             if '#' in clean_line and any(month in clean_line for month in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']):
-                # Extract date information
                 date_match = re.search(r'#\s+(\d+\s+[A-Za-z]+)', clean_line)
                 if date_match:
                     current_week = date_match.group(1)
             elif clean_line.startswith('|') and current_week and '---' not in clean_line:
-                # This is a menu line (skip separator lines)
                 items = clean_line.split('|')
                 if len(items) >= 6 and items[1].strip() and not items[1].startswith('-'):
                     day_meals = items[1:6]
@@ -71,11 +71,9 @@ class SchoolMenuAgent:
     
     def is_school_day(self, date: datetime) -> bool:
         """Check if it's a school day (Mon-Fri and not a UK holiday)"""
-        # Check if weekend
         if date.weekday() >= 5:  # Saturday or Sunday
             return False
             
-        # Check if UK public holiday
         date_str = date.strftime('%Y-%m-%d')
         if date_str in self.uk_holidays:
             return False
@@ -89,26 +87,37 @@ class SchoolMenuAgent:
         if not self.is_school_day(tomorrow):
             return None
             
-        # Simple lookup - in production, we'd map dates to specific weeks
         day_name = tomorrow.strftime('%A')
         
-        # Find the appropriate week (this is simplified)
         for week_meals in menu_data.values():
             if day_name in week_meals:
                 return week_meals[day_name]
         
         return "Menu not found for tomorrow"
     
-    def send_email_notification(self, menu_text: str):
-        """Send email notification using Himalaya CLI"""
+    def send_email_smtp(self, menu_text: str):
+        """Send email via SMTP"""
         tomorrow = datetime.now() + timedelta(days=1)
         subject = f"School Menu - {tomorrow.strftime('%A %d %B %Y')}"
         
-        email_content = f"""From: school-menu-agent@example.com
-To: YOUR_EMAIL_HERE
-Subject: {subject}
-
-📋 School Dinner Menu for {tomorrow.strftime('%A %d %B %Y')}
+        # Get SMTP settings from environment
+        smtp_server = os.getenv('SMTP_SERVER')
+        smtp_port = int(os.getenv('SMTP_PORT', '587'))
+        smtp_username = os.getenv('SMTP_USERNAME')
+        smtp_password = os.getenv('SMTP_PASSWORD')
+        email_to = os.getenv('EMAIL_TO')
+        
+        if not all([smtp_server, smtp_username, smtp_password, email_to]):
+            print("❌ SMTP configuration missing")
+            return
+        
+        # Create email
+        msg = MIMEMultipart()
+        msg['From'] = smtp_username
+        msg['To'] = email_to
+        msg['Subject'] = subject
+        
+        body = f"""📋 School Dinner Menu for {tomorrow.strftime('%A %d %B %Y')}
 
 🍽️ Main Course: {menu_text}
 
@@ -119,29 +128,23 @@ Subject: {subject}
 Note: Menu subject to change. Please check with the school for updates.
 """
         
+        msg.attach(MIMEText(body, 'plain'))
+        
         try:
-            # Send email using Himalaya
-            result = subprocess.run(
-                ['himalaya', 'template', 'send'],
-                input=email_content,
-                text=True,
-                capture_output=True
-            )
-            
-            if result.returncode == 0:
-                print("✅ Email notification sent successfully!")
-            else:
-                print(f"❌ Failed to send email: {result.stderr}")
-                
-        except FileNotFoundError:
-            print("❌ Himalaya CLI not found. Please install it or configure email sending.")
+            with smtplib.SMTP(smtp_server, smtp_port) as server:
+                server.starttls()
+                server.login(smtp_username, smtp_password)
+                server.send_message(msg)
+            print("✅ Email sent successfully!")
+        except Exception as e:
+            print(f"❌ Failed to send email: {e}")
     
     def run_daily_check(self):
         """Main method to run the daily check"""
         print(f"🏫 School Menu Agent - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
         
         # Extract and parse menu
-        content = self.extract_menu_from_pdf()
+        content = self.extract_text_from_pdf()
         if not content:
             print("❌ Could not extract menu from PDF")
             return
@@ -156,11 +159,11 @@ Note: Menu subject to change. Please check with the school for updates.
             print(f"📅 {tomorrow.strftime('%A %d %B %Y')} - No school (weekend/holiday)")
         else:
             print(f"🍽️ Tomorrow's menu: {tomorrows_menu}")
-            self.send_email_notification(tomorrows_menu)
-
-# Configuration
-PDF_PATH = "C:\\Users\\Karthika Niraj's PC\\Downloads\\2_Harris Chafford Hundred & Primary Academy Chafford Hundred_755 (1).pdf"
+            self.send_email_smtp(tomorrows_menu)
 
 if __name__ == "__main__":
-    agent = SchoolMenuAgent(PDF_PATH)
+    # Get PDF path from environment or use default
+    pdf_path = os.getenv('PDF_PATH', './menu.pdf')
+    
+    agent = SchoolMenuAgent(pdf_path)
     agent.run_daily_check()
